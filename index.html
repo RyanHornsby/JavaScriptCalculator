@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby's First Calculator</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <h1>Old-school calculator</h1>
+    <section class="calculator">
+        <div id="calculatorBodyContainer">
+            <div id="calculatorBody">
+                <div id="calculatorScreen">
+                    <p id="screenValue"></p>
+                </div>
+                <div id="calculatorControls">
+                    <div id="calculatorInputs">
+                        <button class="inputButton" onclick="numberChanged('1')" disabled>
+                            1
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('2')" disabled>
+                            2
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('3')" disabled>
+                            3
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('4')" disabled>
+                            4
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('5')" disabled>
+                            5
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('6')" disabled>
+                            6
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('7')" disabled>
+                            7
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('8')" disabled>
+                            8
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('9')" disabled>
+                            9
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('Backspace')" disabled>
+                            <i class="material-icons">backspace</i>
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('0')" disabled>
+                            0
+                        </button>
+                        <button class="inputButton" onclick="numberChanged('.')" disabled>
+                            .
+                        </button>
+                    </div>
+                    <div id="calculatorInstructions">
+                        <div id="instructionsButtonsContainer">
+                            <button class="instructionsButton" onclick="instructionGiven('plus')" disabled>
+                                &plus;
+                            </button>
+                            <button class="instructionsButton" onclick="instructionGiven('minus')" disabled>
+                                &minus;
+                            </button>
+                            <button class="instructionsButton" onclick="instructionGiven('times')" disabled>
+                                &times;
+                            </button>
+                            <button class="instructionsButton" onclick="instructionGiven('divide')" disabled>
+                                &divide;
+                            </button>
+                        </div>
+                        <div id="specialButtonsContainer">
+                            <button class="specialButton" onclick="allClear(resetter)" disabled>
+                                AC
+                            </button>
+                            <button class="specialButton" onclick="toggleMinus()" disabled>
+                                (-)
+                            </button>
+                        </div>
+                        <button id="equalsButton" onclick="equalsPressed(number1, operation)" disabled>
+                            &equals;
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="calculatorBodyShadowTop"></div>
+            <div id="calculatorBodyShadowRight"></div>
+        </div>
+    </section>
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
