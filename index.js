@@ -7,7 +7,7 @@ function numberChanged(numberPressed) {
         screenValue.textContent = "";
     }
     // If the current value on screen is 0, or an action has been presed, set it to blank so I can concatenate properly
-    if (["plus", "minus", "divide", "times", "0", "ERR: TOO BIG", "Infinity"].includes(screenValue.textContent)) {
+    if (["plus", "minus","divided by", "times by", "0", "ERR: TOO BIG", "Infinity"].includes(screenValue.textContent)) {
         screenValue.textContent = "";
     }
     // Deletes latest number if they press backspace
@@ -44,10 +44,19 @@ let number1 = null;
 function instructionGiven(buttonPressed) {
     operation = buttonPressed;
     // Handles if they press multiple operations in a row
-    if (!["plus", "minus", "divide", "times", "ERR: TOO BIG", "Infinity"].includes(screenValue.textContent)) {
+    if (!["plus", "minus", "divided by", "times by", "ERR: TOO BIG", "Infinity"].includes(screenValue.textContent)) {
         number1 = screenValue.textContent;
     }
-    screenValue.textContent = buttonPressed;
+    switch (buttonPressed) {
+        case "times":
+            screenValue.textContent = "times by";
+            break;
+        case "divide":
+            screenValue.textContent = "divided by";
+            break;
+        default:
+            screenValue.textContent = buttonPressed;
+    }
 }
 
 let number2 = null;
@@ -59,7 +68,7 @@ function equalsPressed(number1, operation) {
         return "No changes made."
     }
     // Handles if they press equals without entering a second number    
-    if (["plus", "minus", "divide", "times", "ERR: TOO BIG", "Infinity"].includes(screenValue.textContent)) {
+    if (["plus", "minus","divided by", "times by", "ERR: TOO BIG", "Infinity"].includes(screenValue.textContent)) {
         screenValue.textContent = number1;
         return "No changes made."
     }
@@ -113,7 +122,7 @@ function calculator(number1, operation, number2) {
 function toggleMinus() {
     let screenValue = document.getElementById("screenValue");
     // Doesn't add a minus unless it's a real input. Including 0 because otherwise you can get -infinity etc and I cba with that
-    if (["plus", "minus", "divide", "times", "ERR: TOO BIG", "Infinity", "0"].includes(screenValue.textContent)) {
+    if (["plus", "minus","divided by", "times by", "ERR: TOO BIG", "Infinity", "0"].includes(screenValue.textContent)) {
         return "No sign added."
     }
     if (screenValue.textContent[0] == "-") {
