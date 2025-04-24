@@ -15,3 +15,4 @@ It includes examples of:
 -Understanding of variable scopes
 -Arrow functions
 -Edge-case handling
+-Switch case
