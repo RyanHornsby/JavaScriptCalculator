@@ -30,7 +30,7 @@ function numberChanged(numberPressed) {
         }
     }
     // Don't let the number ever be longer than 9 characters
-    if ((Math.abs(screenValue.textContent).length == 9 && !screenValue.textContent.includes(".")) || Math.abs(screenValue.textContent).length == 10) {
+    if ((String(Math.abs(screenValue.textContent)).length == 9 && !screenValue.textContent.includes(".")) || String(Math.abs(screenValue.textContent)).length == 10) {
         return "Number too long";
     }
     // Whatever number they click, concatenate it to the current number
